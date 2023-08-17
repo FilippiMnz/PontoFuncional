@@ -56,6 +56,6 @@ function listarLIVROS() {
   
   removerLivro('Berserk');
   
-  console.log('Catálogo após remoção:');
+  console.log('Catálogo Depois Da remoção:');
   listarLIVROS();
   
