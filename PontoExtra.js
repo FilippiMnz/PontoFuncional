@@ -40,7 +40,10 @@ function listarLIVROS() {
   }
   
   function removerLivro(titulo) {
-    return catalogoPrincipal.filter(livro => livro.titulo !== titulo);
+    const livroIndex = catalogoPrincipal.findIndex(livro => livro.titulo === titulo);
+    if (livroIndex !== -1) {
+      catalogoPrincipal.splice(livroIndex, 1);
+    }
   }
   
 
