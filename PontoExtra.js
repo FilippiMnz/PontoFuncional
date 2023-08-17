@@ -5,7 +5,7 @@
         this.genero = genero;
     }
     
-  let catalogoPrincipal = [
+  const catalogoPrincipal = [
     {titulo:"IT: A coisa", autor:"Stephen King", ano:"1986",genero:"Terror"},
     {titulo:"Harry Potter e a Pedra Filosofal ", autor:"J.K. Rowlig", ano:"1997",genero:"Literatura Fantastica"},
     {titulo:"EM FOGO LENTO", autor:"Paula Hawkins", ano:"2021",genero:"Misterio"},
@@ -23,12 +23,13 @@ function listarLIVROS() {
 
   function adicionarLivro(titulo, autor, ano, genero) {
     const novoLivro = new Livro(titulo, autor, ano, genero);
-    return [...catalogoPrincipal, novoLivro];
+    catalogoPrincipal.push(novoLivro);
   }
 
     //Demo Adicao Livros
-  catalogoPrincipal = adicionarLivro('Full Metal Alchemist ', 'Hiromu Arakawa', '2001', 'Literatura Fantastica');
-  catalogoPrincipal = adicionarLivro(' O Chamado de cthulhu', 'H.P. Lovecraft', '1928', 'Terror')
+ adicionarLivro('Full Metal Alchemist', 'Hiromu Arakawa', '2001', 'Literatura Fantastica');
+ adicionarLivro('O Chamado de Cthulhu', 'H.P. Lovecraft', '1928', 'Terror');
+
 
 
 
@@ -50,7 +51,7 @@ function listarLIVROS() {
   const livrosDeTerror = buscarPorGenero('Terror');
   console.log('Livros de Terror:', livrosDeTerror);
   
-  catalogoPrincipal = removerLivro('Berserk');
+  removerLivro('Berserk');
   
   console.log('Catálogo após remoção:');
   listarLIVROS();
